@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="LayoutPadrao">
+<head>
+<title>Consulta IP</title>
+</head>
+
+<section layout:fragment="conteudo" th:object="${localizacao}">
+	<div layout:include="MensagemErro"></div>
+	<div class="card text-center">
+		<div class="card-header">
+			<div class="clearfix">
+				<h4 class="panel-title aw-titulo-panel">Consulta IP :</h4>
+			</div>
+		</div>
+		<div class="card-body">
+			<form method="POST" class="form-horizontal" th:action="@{/ip}">				
+				<div 
+					class="form-group row ">
+					<label 
+						for="region" 
+						class="col-sm-2 control-label">Região</label>
+					<div class="col-sm-4">
+						<input 
+							type="text" 
+							class="form-control "
+							id="region" 
+							th:field="*{region}" 
+							readonly="true"/>
+					</div>
+				</div>
+				
+				<div 
+					class="form-group row ">
+					<label 
+						for="valid" 
+						class="col-sm-2 control-label">Válido</label>
+					<div class="col-sm-4">
+						<input 
+							type="text" 
+							class="form-control "
+							id="valid" 
+							th:field="*{valid}" 
+							readonly="true"/>
+					</div>
+				</div>
+				
+				<div 
+					class="form-group row ">
+					<label 
+						for="hostname" 
+						class="col-sm-2 control-label">Host</label>
+					<div class="col-sm-4">
+						<input 
+							type="text" 
+							class="form-control "
+							id="hostname" 
+							th:field="*{hostname}" 
+							readonly="true"/>
+					</div>
+				</div>
+				
+				<div 
+					class="form-group row ">
+					<label 
+						for="longitude" 
+						class="col-sm-2 control-label">Longitude</label>
+					<div class="col-sm-4">
+						<input 
+							type="text" 
+							class="form-control "
+							id="longitude" 
+							th:field="*{longitude}" 
+							readonly="true"/>
+					</div>
+				</div>
+				
+				<div 
+					class="form-group row ">
+					<label 
+						for="latitude" 
+						class="col-sm-2 control-label">Latitude</label>
+					<div class="col-sm-4">
+						<input 
+							type="text" 
+							class="form-control "
+							id="latitude" 
+							th:field="*{latitude}" 
+							readonly="true"/>
+					</div>
+				</div>
+				
+				<div 
+					class="form-group row ">
+					<label 
+						for="countrycode" 
+						class="col-sm-2 control-label">UF</label>
+					<div class="col-sm-4">
+						<input 
+							type="text" 
+							class="form-control "
+							id="countrycode" 
+							th:field="*{countrycode}" 
+							readonly="true"/>
+					</div>
+				</div>
+				
+				<div 
+					class="form-group row ">
+					<label 
+						for="city" 
+						class="col-sm-2 control-label">Cidade</label>
+					<div class="col-sm-4">
+						<input 
+							type="text" 
+							class="form-control "
+							id="city" 
+							th:field="*{city}" 
+							readonly="true"/>
+					</div>
+				</div>
+				
+				<div 
+					class="form-group row ">
+					<label 
+						for="country" 
+						class="col-sm-2 control-label">País</label>
+					<div class="col-sm-4">
+						<input 
+							type="text" 
+							class="form-control "
+							id="country" 
+							th:field="*{country}" 
+							readonly="true"/>
+					</div>
+				</div>		
+			</form>
+		</div>
+	</div>
+</section>
+</html>
