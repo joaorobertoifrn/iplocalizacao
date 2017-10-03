@@ -4,36 +4,19 @@
 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 	layout:decorator="LayoutPadrao">
 <head>
-<title>Consulta IP</title>
+	<title>Consulta IP</title>
 </head>
-
 <section layout:fragment="conteudo" th:object="${localizacao}">
 	<div layout:include="MensagemErro"></div>
 	<div class="card text-center">
 		<div class="card-header">
 			<div class="clearfix">
-				<h4 class="panel-title aw-titulo-panel">Consulta IP :</h4>
+				<h4 class="panel-title aw-titulo-panel">Consulta IP</h4>
 			</div>
 		</div>
 		<div class="card-body">
-			<form method="GET" class="form-horizontal" th:action="@{/}" th:object="${filtro}">
-	   			<div class="form-group">
-	   				<div class="col-sm-4">
-	   					<div class="input-group">
-	   						<input class="form-control" placeholder="Informe o IP"
-	   							autofocus="autofocus" th:field="*{ip}"></input>
-	   						<span class="input-group-btn">
-	   							<button type="submit" class="btn btn-default">
-	   								Pesquisar
-	   							</button>
-	   						</span>
-	   					</div>
-	   				</div>
-	   			</div>
-	   		</form>
 	   		<form method="GET" class="form-horizontal" th:object="${localizacao}">		
-				<div 
-					class="form-group row ">
+				<div class="form-group row ">
 					<label 
 						for="region" 
 						class="col-sm-2 control-label">Região</label>

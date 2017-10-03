@@ -3,8 +3,8 @@
 	xmlns:th="http://www.thymeleaf.org"
 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 
-<div class="alert alert-danger" th:if="${!#strings.isEmpty(apierrormsg)}">
-	<span th:text="*{apierrormsg}"></span>
+<div class="alert alert-danger" th:if="${!#strings.isEmpty(mensagem)}">
+	<span th:text="${mensagem}">Erro ao Consultar Localização</span>
 </div>
 
 </html>
