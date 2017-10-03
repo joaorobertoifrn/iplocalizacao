@@ -17,7 +17,6 @@ import com.mashape.unirest.http.exceptions.UnirestException;
 import br.edu.ifrn.model.Localizacao;
 import br.edu.ifrn.util.Util;
 
-
 @Controller
 @RequestMapping("/")
 public class IpController {
@@ -35,10 +34,10 @@ public class IpController {
 		.header("Content-Type", "application/x-www-form-urlencoded")
 		.header("Accept", "application/json")
 		.field("ip", ip)
-		.field("reverse-lookup", false)
+		.field("reverse-lookup" , true)
 		.asJson();
-		String json = response.getBody().toString();
-		Gson gson = new Gson();
+		String json = response.getBody().toString(); 
+	 	Gson gson = new Gson();
 		
 		Localizacao localizacao = gson.fromJson(json, Localizacao.class);
 		
