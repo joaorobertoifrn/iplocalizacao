@@ -16,7 +16,22 @@
 			</div>
 		</div>
 		<div class="card-body">
-			<form method="POST" class="form-horizontal" th:action="@{/ip}">				
+			<form method="GET" class="form-horizontal" th:action="@{/}" th:object="${filtro}">
+	   			<div class="form-group">
+	   				<div class="col-sm-4">
+	   					<div class="input-group">
+	   						<input class="form-control" placeholder="Informe o IP"
+	   							autofocus="autofocus" th:field="*{ip}"></input>
+	   						<span class="input-group-btn">
+	   							<button type="submit" class="btn btn-default">
+	   								Pesquisar
+	   							</button>
+	   						</span>
+	   					</div>
+	   				</div>
+	   			</div>
+	   		</form>
+	   		<form method="GET" class="form-horizontal" th:object="${localizacao}">		
 				<div 
 					class="form-group row ">
 					<label 
@@ -135,8 +150,8 @@
 							th:field="*{country}" 
 							readonly="true"/>
 					</div>
-				</div>		
-			</form>
+				</div>
+			</form>	
 		</div>
 	</div>
 </section>
