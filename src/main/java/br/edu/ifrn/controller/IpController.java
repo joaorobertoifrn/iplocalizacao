@@ -29,15 +29,12 @@ public class IpController {
 	
 	@RequestMapping
 	public ModelAndView pesquisar(@ModelAttribute("filtro") IpFilter filtro, Errors errors, RedirectAttributes attributes) throws JsonParseException, JsonMappingException, UnirestException {
-		Localizacao localizacao = consultaIpService.filtrar(filtro);
 		ModelAndView mv = new ModelAndView(IP_VIEW);
-		
-		if (!localizacao.getApierrormsg().isEmpty()) {
-			attributes.addFlashAttribute("mensagem", localizacao.getApierrormsg());
-		}
-		
-		mv.addObject(localizacao);
-		
+			Localizacao localizacao = consultaIpService.filtrar(filtro);
+			if (localizacao.getApierrormsg() != "") {
+				attributes.addFlashAttribute("mensagem", "Limite de pesquisas Excedido.");
+			}
+			mv.addObject(localizacao);
 		return mv;
 	}
 	
